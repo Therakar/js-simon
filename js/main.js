@@ -7,9 +7,8 @@ let numberList = [];
 //array per numeri inseriti dall'utente
 let userNumber = [];
 
-//numeri corretti
+//array per i numeri corretti
 let corectNumbers = [];
-
 //UTILITY FUNCTIONS
 //funzione creazione numeri
 function getRndInteger(min, max){
@@ -54,9 +53,12 @@ setTimeout(function(){
             alert("ATTENZIONE: QUESTO NUMERO è GIà STATO INSERITO!");
         }
 
-    } 
-    
-}, 11 * 1000)
+        //se il mumero inserito dall'utente è presente nella numberList viene pushato nell'array corectNumbers
+        if (numberList.includes(userChoice)) { 
+            corectNumbers.push(userChoice);
+        } 
+    }
+}, 11 * 1000);
 
 
 
