@@ -3,12 +3,15 @@
 //ARRAY
 //array che conterrà i 5 numeri 
 let numberList = [];
+//array per numeri inseriti dall'utente
+let userNumber = [];
 
 //UTILITY FUNCTIONS
 //funzione creazione numeri
 function getRndInteger(min, max){
     return Math.floor(Math.random()* (max - min + 1) + min);
 }
+
 
 
 // MAIN
@@ -23,8 +26,7 @@ while (numberList.length < 5){
 
         //pusha i numeri all'interno dell'arra
         numberList.push(numberRandom);
-    }
-    console.log
+    }S
     //stampa l'array che contiene i numeri casuali nella pagina   
     casualNumber.innerHTML = numberList; 
 }
@@ -33,8 +35,14 @@ setTimeout(function(){
     casualNumber.style.display = 'none';
 }, 30 * 1000)
 
+//ciclo while che fa inserire i numeri all'utente
+while(userNumber < 5){
 
+    //chiede un numero all'utente e lo salva
+    const userChoice = Number(prompt("PROVA A INSERIRE I NUMERI APPENA VISTI:"));
+    userNumber.push(userChoice);
+} 
 
-
+console.log(userChoice);
 
 
