@@ -59,16 +59,18 @@ setTimeout(function(){
         
         
     }
+
+    //se l'utente ha indovinato dei numeri viene riprodotto questo alert
+    if (corectNumbers.length > 0){
+        alert(`Hai indovinato ${corectNumbers.length} numeri, i numeri indovinati sono: ${corectNumbers}`);
+    } else{//se l'utente NON ha indovinato nessun numero viene riprodotto questo alert
+        alert(`Non hai indovinato neanche un numero!`);
+    }
 }, 11 * 1000);
 
 console.log(`Numeri inseriti dall'utente:`, userNumber);//DEBUG
 console.log(`Numeri indovinati:`, corectNumbers);//DEBUG
 
-//se l'utente ha indovinato dei numeri viene riprodotto questo alert
-if (corectNumbers.length > 0){
-    alert(`Hai indovinato ${corectNumbers.length} numeri, i numeri indovinati sono: ${corectNumbers}`);
-} else{//se l'utente NON ha indovinato nessun numero viene riprodotto questo alert
-    alert(`Non hai indovinato neanche un numero!`);
-}
+
 
 
