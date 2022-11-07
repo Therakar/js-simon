@@ -35,31 +35,40 @@ while (numberList.length < 5){
 }
  //countdown di 30 secondi al termine del quale i numeri spariscono
 setTimeout(function(){
-    casualNumber.style.display = 'none';
+    casualNumber.remove(); //rimuove i numeri casuali 
 }, 10 * 1000);
 
 //countdown di 31 secondi
 setTimeout(function(){
     //ciclo while che fa inserire i numeri all'utente
-    while(userNumber < 5){
+    while(userNumber.length < 5){
 
         //chiede un numero all'utente e lo salva
         const userChoice = Number(prompt("PROVA A INSERIRE I NUMERI APPENA VISTI:"));
         //se il numero inserito dall'utenete non è già presente nella lista viene pushato nell'array userNumber
         if(userNumber.includes(userChoice) === false){ 
             userNumber.push(userChoice);
-            
+            //se il mumero inserito dall'utente è presente nella numberList viene pushato nell'array corectNumbers
+            if (numberList.includes(userChoice)) { 
+            corectNumbers.push(userChoice);
+            } 
         } else{ //altrimenti c'è un alert
             alert("ATTENZIONE: QUESTO NUMERO è GIà STATO INSERITO!");
         }
 
-        //se il mumero inserito dall'utente è presente nella numberList viene pushato nell'array corectNumbers
-        if (numberList.includes(userChoice)) { 
-            corectNumbers.push(userChoice);
-        } 
+        
+        
     }
 }, 11 * 1000);
 
+console.log(`Numeri inseriti dall'utente:`, userNumber);//DEBUG
+console.log(`Numeri indovinati:`, corectNumbers);//DEBUG
 
+//se l'utente ha indovinato dei numeri viene riprodotto questo alert
+if (corectNumbers.length > 0){
+    alert(`Hai indovinato ${corectNumbers.length} numeri, i numeri indovinati sono: ${corectNumbers}`);
+} else{//se l'utente NON ha indovinato nessun numero viene riprodotto questo alert
+    alert(`Non hai indovinato neanche un numero!`);
+}
 
 
